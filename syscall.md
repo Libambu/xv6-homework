@@ -3,10 +3,12 @@
 You will modify xv6 to add a system call. 
 
 ## Part One: System call tracing
+
 Your first task is to modify the xv6 kernel to print out a line for each system call invocation. It is enough to print the name of the system call and the return value; you don't need to print the system call arguments.
 
 When you're done, you should see output like this when booting xv6:
 
+```
 ...
 fork -> 2
 exec -> 0
@@ -14,6 +16,8 @@ open -> 3
 close -> 0
 $write -> 1
  write -> 1
+```
+
 That's init forking and execing sh, sh making sure only two file descriptors are open, and sh writing the $ prompt. (Note: the output of the shell and the system call trace are intermixed, because the shell uses the write syscall to print its output.)
 
 Hint: modify the syscall() function in syscall.c.
