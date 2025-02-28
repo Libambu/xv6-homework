@@ -110,6 +110,12 @@ Hint: It will be easier to look at traps with gdb if you tell qemu to use only o
 
 It's OK if your solution doesn't save the caller-saved user registers when calling the handler.
 
-Optional challenges: 1) Save and restore the caller-saved user registers around the call to handler. 2) Prevent re-entrant calls to the handler -- if a handler hasn't returned yet, don't call it again. 3) Assuming your code doesn't check that tf->esp is valid, implement a security attack on the kernel that exploits your alarm handler calling code.
+Optional challenges: 
+
+1) Save and restore the caller-saved user registers around the call to handler. 
+
+2) Prevent re-entrant calls to the handler -- if a handler hasn't returned yet, don't call it again. 
+
+3) Assuming your code doesn't check that tf->esp is valid, implement a security attack on the kernel that exploits your alarm handler calling code.
 
 Submit: The code that you added to trap.c.
