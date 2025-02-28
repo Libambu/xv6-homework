@@ -6,7 +6,7 @@ Note: Your can use your Linux's gcc; you don't need the xv6 in this homework.
 
 In this assignment you will explore parallel programming with threads and locks using a hash table. You should do this homework on a real computer (not xv6, not qemu) that has multiple cores. Most recent laptops have multicore processors. 
 
-Download [ph.c]("./ph.c") and compile it:
+Download [ph.c](ph.c) and compile it:
 
 ```
 $ gcc -g -O2 ph.c -pthread
@@ -66,7 +66,7 @@ Submit: your modified ph.c
 
 In this assignment we will explore how to implement a barrier using condition variables provided by the pthread library. A barrier is a point in an application at which all threads must wait until all other threads reach that point too. Condition variables are a sequence coordination technique similar to xv6's sleep and wakeup. 
 
-Download [barrier.c]("./barrier.c") and compile it:
+Download [barrier.c](barrier.c) and compile it:
 ```
 $ gcc -g -O2 -pthread barrier.c
 $ ./a.out 2
