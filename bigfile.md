@@ -14,6 +14,7 @@ Add
 QEMUEXTRA = -snapshot
 ```
 right before QEMUOPTS
+
 The above two steps speed up qemu tremendously when xv6 creates large files.
 
 mkfs initializes the file system to have fewer than 1000 free data blocks, too few to show off the changes you'll make. Modify param.h to set FSSIZE to:
