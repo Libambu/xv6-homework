@@ -78,9 +78,11 @@ Your goal is to achieve the desired behavior. In addition to the lock primitives
 ```c
 pthread_cond_wait(&cond, &mutex);  // go to sleep on cond, releasing lock mutex
 pthread_cond_broadcast(&cond);     // wake up every thread sleeping on cond
+```
+
 pthread_cond_wait releases the mutex when called, and re-acquires the mutex before returning.
 We have given you barrier_init(). Your job is to implement barrier() so that the panic won't occur. We've defined struct barrier for you; its fields are for your use.
-```
+
 There are two issues that complicate your task:
 
 You have to deal with a succession of barrier calls, each of which we'll call a round. bstate.round records the current round. You should increase bstate.round when each round starts.
