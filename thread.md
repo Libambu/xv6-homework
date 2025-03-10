@@ -1,6 +1,7 @@
 # Homework: Threads and synchronize
 
 Note: Your can use your Linux's gcc; you don't need the xv6 in this homework.
+
 说明：
 - 本实验在任何一台 Linux 上使用 gcc 即可完成，包括虚拟机中的 Linux ，无平台限制，不需要像其他一些实验一样需要 xv6 环境。
 - 虚拟机可以使用VMware Workstation或Oracle VirtualBox，也可以使用Microsoft wsl(windows subsystem for linux)，注意本实验需要为虚拟机分配多于1个的CPU核，以期观察多核环境下的竞争和同步现象。
