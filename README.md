@@ -37,4 +37,10 @@ git clone https://gitee.com/tjucs/xv6-public
 cd xv6-public
 make qemu-nox
 ```
+
+- 注意如果编译报错，则修改xv6-public目录下的 Makefile，删除其中的 -Werror ，这样就能编译通过了。最后运行
+
+```
+make qemu-nox
+```
 - 注意进了qemu以后怎么退出：先按 ctrl-a 松开再按 x
