@@ -5,8 +5,8 @@
 
 ## Gitee相关镜像仓库
 - [xv6第11版源代码](https://gitee.com/tjucs/xv6-public)
-- [xv6第11版文档](book-rev11.pdf)
-- [xv6第11版源代码PDF打印版](xv6-rev11.pdf)
+- [xv6第11版源代码PDF带行号版](raw/master/xv6-rev11.pdf)
+- [xv6第11版教材PDF](raw/master/book-rev11.pdf)
 - [6.828-qemu](https://gitee.com/tjucs/6.828-qemu)
 
 ## 实验列表
