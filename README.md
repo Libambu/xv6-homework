@@ -16,8 +16,8 @@
 - [Homework: User-level threads](uthread.md)
 - [Homework: xv6 lazy page allocation](alloc.md)
 - [Homework: mmap()](mmap.md)
-- [Homework: bigger files for xv6](bigfile.c)
-- [Homework: xv6 log](log.c)
+- [Homework: bigger files for xv6](bigfile.md)
+- [Homework: xv6 log](log.md)
 
 ## xv6 运行环境设置
 - 首先，你需要有一台Linux，无论是物理机还是虚拟机上的都可以。
