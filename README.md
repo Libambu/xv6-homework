@@ -18,12 +18,23 @@
 - [Homework: xv6 log](log.c)
 
 ## xv6 运行环境设置
-- 首先，你需要有一台Linux，无论是物理机还是虚拟机上的都可以，虚拟机可以使用 VMware Workstation 或者 VirtualBox 或者 Windows 自带的 WSL。以下 Linux 版本以 Ubuntu 24.04 为例，其他版本大同小异，但是可能会有一些新问题需要解决。
+- 首先，你需要有一台Linux，无论是物理机还是虚拟机上的都可以。
+- 虚拟机可以使用 VMware Workstation 或者 VirtualBox 或者 Windows 自带的 WSL。
+- 以下 Linux 版本以 Ubuntu 24.04 为例，其他版本大同小异，但是可能会有一些新问题需要解决。
 
-- 安装必要的工具：gcc, make, qemu
+- 安装必要的工具：git, gcc, make, qemu
 ```
 sudo apt update
+sudo apt install git
 sudo apt install gcc
 sudo apt install make
 sudo apt install qemu-system-x86
 ```
+
+- 下载 xv6 源代码。注意，我们的实验使用的是xv6-x86，不是xv6-riscv，对应 MIT 6.828 课程官网是 2018 年及以前版本，不是 2019 年及以后的版本。
+```
+git clone https://gitee.com/tjucs/xv6-public
+cd xv6-public
+make qemu-nox
+```
+- 注意进了qemu以后怎么退出：先按 ctrl-a 松开再按 x
