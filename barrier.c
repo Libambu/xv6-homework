@@ -16,22 +16,35 @@ struct barrier {
   int round;     // Barrier round
 } bstate;
 
-static void
-barrier_init(void)
+static void barrier_init(void)
 {
   assert(pthread_mutex_init(&bstate.barrier_mutex, NULL) == 0);
   assert(pthread_cond_init(&bstate.barrier_cond, NULL) == 0);
   bstate.nthread = 0;
 }
 
-static void 
-barrier()
+static void barrier()
 {
-  bstate.round++;
+  pthread_mutex_lock(&bstate.barrier_mutex);
+
+  bstate.nthread++;
+
+  // 如果所有线程都到达了屏障点
+  if (bstate.nthread == nthread) {
+    // 广播条件变量，唤醒所有等待的线程
+    pthread_cond_broadcast(&bstate.barrier_cond);
+    bstate.nthread = 0;
+    // 增加轮次计数器
+    bstate.round++;
+  } else {
+    // 如果不是所有线程都到达，当前线程等待
+    pthread_cond_wait(&bstate.barrier_cond, &bstate.barrier_mutex);
+  }
+
+  pthread_mutex_unlock(&bstate.barrier_mutex);
 }
 
-static void *
-thread(void *xa)
+static void *thread(void *xa)
 {
   long n = (long) xa;
   long delay;
@@ -45,8 +58,7 @@ thread(void *xa)
   }
 }
 
-int
-main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
   pthread_t *tha;
   void *value;
