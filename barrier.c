@@ -31,11 +31,11 @@ static void barrier()
 
   // 如果所有线程都到达了屏障点
   if (bstate.nthread == nthread) {
-    // 广播条件变量，唤醒所有等待的线程
-    pthread_cond_broadcast(&bstate.barrier_cond);
     bstate.nthread = 0;
     // 增加轮次计数器
     bstate.round++;
+    // 广播条件变量，唤醒所有等待的线程
+    pthread_cond_broadcast(&bstate.barrier_cond);
   } else {
     // 如果不是所有线程都到达，当前线程等待
     pthread_cond_wait(&bstate.barrier_cond, &bstate.barrier_mutex);
